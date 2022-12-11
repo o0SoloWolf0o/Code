@@ -219,4 +219,7 @@ int main()
     // G.nonConnected(6);
     // G.nonConnected(7);
     // G.nonConnected(8);
+
+    // Time Complecity: O(n^2)
+    cout << "Time Complecity: O(n^2) " << endl;
 }
