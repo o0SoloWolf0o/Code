@@ -134,16 +134,22 @@ void Graph::friendRecommend(int start)
     cout << "and also recommend to ";
 
     // cout << friends(maxIndex) << " ";
-    // Check if the maxIndex is already friends with the start
+    // Check if the maxIndex is already friends pick another one
     if (adj[start][maxIndex] == 1)
     {
-        cout << "no one" << endl;
-        return;
+        for (int i = 0; i < v; i++)
+        {
+            if (adj[maxIndex][i] == 1 && i != start)
+            {
+                cout << friends(i) << " ";
+            }
+        }
     }
     else
     {
         cout << friends(maxIndex) << " ";
     }
+    
 
     cout << "who is friends with: ";
     for (int i = 0; i < v; i++)
