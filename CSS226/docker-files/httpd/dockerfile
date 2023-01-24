@@ -1,0 +1,6 @@
+# A simple web app served by Apache hhtpd
+FROM httpd:2.4
+LABEL AUTHOR=chukiatwr@gmail.com
+LABEL VERSION=0.1
+WORKDIR /usr/local/apache2
+COPY index.html htdocs/index.html
