@@ -90,5 +90,6 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "livePreview.defaultPreviewPath": "c:\\Users\\Pumipat\\Documents\\GitHub\\Code\\CSS227\\Lab1\\Lab1-1.html"
 }
