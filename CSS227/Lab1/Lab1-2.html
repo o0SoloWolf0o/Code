@@ -6,28 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab1-2</title>
+    <link rel="stylesheet" href="CSS/Lab1-2.css">
+    
 </head>
 
-<body>
+<p>
     <div style="text-align: center;">
-        <h1>Sign up with your email address</h1>
+        <h3>Sign up with your email address</h3>
     </div>
     <div>
         <input type="email" placeholder="Email">
     </div>
+    <br/>
     <div>
         <input type="email" placeholder="Confirm Email">
     </div>
+    <br/>
     <div>
         <input type="password" placeholder="Password">
     </div>
+    <br/>
     <div>
         <input type="text" placeholder="What should we call you?">
     </div>
-    Date of Birth
+    
+    <p>Date of Birth:</p>
     <div>
-        <select placeholder="Mouth">
-            <option>Mouth</option>
+        <select>
+            <option>Month</option>
             <option value="January">January</option>
             <option value="February">February</option>
             <option value="March">March</option>
@@ -46,35 +52,37 @@
 
         <input type="number" placeholder="Year">
     </div>
+    <br/>
     <div>
         <input type="radio" value="Male">
-        Male
+        <label>Male</label>
         <input type="radio" value="Female">
-        Female
+        <label>Female</label>
         <input type="radio" value="Non-binary">
-        Non-binary
+        <label>Non-binary</label>
     </div>
+    <br/>
     <div>
-        <!-- Botton -->
         <form>
             <input type="checkbox" name="checkbox" value="checkbox">
             Share my registration data with Spotify's content providers for marketing purposes.
         </form>
     </div>
     <br>
-    <div>
-        <span> clicking Sign up, you agree to Spotify's </span>
+    <div class="terms">
+        <span>By clicking Sign up, you agree to Spotify's </span>
         <a href="" style="color:#00FF00" ;>Terms and Conditions of Use</a>.
     </div>
-
-    <div>
+    <br/>
+    <div class="learnmore">
         <span> To learn more about how Spotify collects, uses, shares and protects your personal data please read the
             Spotify </span>
         <a href="" style="color: #00FF00;">Privacy Policy</a>.
     </div>
+    <br/>
     <div>
-        <!-- Botton -->
-        <input type="button" value="Sign up" placeholder="SIGN UP">
+        
+        <input type="submit" value="SIGN UP">
     </div>
 
 </body>
