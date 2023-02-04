@@ -16,9 +16,7 @@ td {
 td img {
     text-align: center;
     padding: 10px;
-    color: #000;
     font-weight: 600;
-    border-bottom: 1px solid rgb(227, 227, 227);
 }
 th {
     text-align: center;
@@ -27,10 +25,6 @@ th {
     border-bottom: 1px solid rgb(227, 227, 227);
     
 }
-img{
-    width: 18px;
-    margin: auto;
-}
 .club{
     text-align: left;
 }
@@ -38,4 +32,11 @@ img{
     padding: 0px 10px;
     display: inline-block;
     vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background-color: white;
+}
+.score{
+    text-align: center;
 }
