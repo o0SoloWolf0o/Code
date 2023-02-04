@@ -1,5 +1,5 @@
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: arial, sans-serif;
 }
 table {
     border-collapse: collapse;
@@ -20,10 +20,15 @@ th {
     border-bottom: 1px solid rgb(227, 227, 227);
     text-align: center;
 }
+img {
+    text-align: center;
+    padding: auto;
+}
+
 .club{
     text-align: left;
 }
 .clubs{
     padding: 0px 10px;
-    
+    display: inline-block;
 }
