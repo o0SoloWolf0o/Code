@@ -77,3 +77,7 @@ input[type="submit"] {
     color: red;
     font-size: 12px;
 }
+.g-recaptcha{
+    margin-left: 33%;
+    margin-right: 30%;
+}

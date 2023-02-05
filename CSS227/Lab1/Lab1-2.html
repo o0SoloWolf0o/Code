@@ -7,84 +7,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab1-2</title>
     <link rel="stylesheet" href="CSS/Lab1-2.css">
-    
+
 </head>
 
 <p>
-    <div style="text-align: center;">
-        <h3>Sign up with your email address</h3>
-    </div>
-    <div>
-        <input type="email" placeholder="Email">
-    </div>
-    <br/>
-    <div>
-        <input type="email" placeholder="Confirm Email">
-    </div>
-    <br/>
-    <div>
-        <input type="password" placeholder="Password">
-    </div>
-    <br/>
-    <div>
-        <input type="text" placeholder="What should we call you?">
-    </div>
-    
-    <p>Date of Birth:</p>
-    <div>
-        <select>
-            <option>Month</option>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-        </select>
+<div style="text-align: center;">
+    <h3>Sign up with your email address</h3>
+</div>
+<div>
+    <input type="email" placeholder="Email">
+</div>
+<br />
+<div>
+    <input type="email" placeholder="Confirm Email">
+</div>
+<br />
+<div>
+    <input type="password" placeholder="Password">
+</div>
+<br />
+<div>
+    <input type="text" placeholder="What should we call you?">
+</div>
 
-        <input type="number" placeholder="Day">
+<p>Date of Birth:</p>
+<div>
+    <select>
+        <option>Month</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
 
-        <input type="number" placeholder="Year">
-    </div>
-    <br/>
-    <div>
-        <input type="radio" value="Male">
-        <label>Male</label>
-        <input type="radio" value="Female">
-        <label>Female</label>
-        <input type="radio" value="Non-binary">
-        <label>Non-binary</label>
-    </div>
-    <br/>
-    <div>
-        <form>
-            <input type="checkbox" name="checkbox" value="checkbox">
-            Share my registration data with Spotify's content providers for marketing purposes.
-        </form>
-    </div>
-    <br>
-    <div class="terms">
-        <span>By clicking Sign up, you agree to Spotify's </span>
-        <a href="" style="color:rgb(80, 175, 80)" ;>Terms and Conditions of Use</a>.
-    </div>
-    <br/>
-    <div class="learnmore">
-        <span> To learn more about how Spotify collects, uses, shares and protects your personal data please read the
-            Spotify </span>
-        <a href="" style="color: rgb(80, 175, 80)">Privacy Policy</a>.
-    </div>
-    <br/>
-    <div>
-        
-        <input type="submit" value="SIGN UP">
-    </div>
+    <input type="number" placeholder="Day">
+
+    <input type="number" placeholder="Year">
+</div>
+<br />
+<div>
+    <input type="radio" value="Male">
+    <label>Male</label>
+    <input type="radio" value="Female">
+    <label>Female</label>
+    <input type="radio" value="Non-binary">
+    <label>Non-binary</label>
+</div>
+<br />
+<div>
+    <form>
+        <input type="checkbox" name="checkbox" value="checkbox">
+        Share my registration data with Spotify's content providers for marketing purposes.
+    </form>
+</div>
+<br>
+<div
+  class="g-recaptcha"
+  data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  data-callback="onRecaptchaSuccess"
+  data-expired-callback="onRecaptchaResponseExpiry"
+  data-error-callback="onRecaptchaError"
+>
+</div>
+</div>
+<div class="terms">
+    <span>By clicking Sign up, you agree to Spotify's </span>
+    <a href="" style="color:rgb(80, 175, 80)" ;>Terms and Conditions of Use</a>.
+</div>
+<br />
+<div class="learnmore">
+    <span> To learn more about how Spotify collects, uses, shares and protects your personal data please read the
+        Spotify </span>
+    <a href="" style="color: rgb(80, 175, 80)">Privacy Policy</a>.
+</div>
+<br />
+<div>
+
+    <input type="submit" value="SIGN UP">
+</div>
 
 </body>
+<script src="https://www.google.com/recaptcha/api.js" async defer>
+</script>
 
 </html>
