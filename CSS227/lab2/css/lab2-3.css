@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+    margin: auto;
+    border: none;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 2px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td:last-child {
+    border-right: none;
+}
+h1{
+    text-align: center;
+}
