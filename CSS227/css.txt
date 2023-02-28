@@ -1,2 +1,3 @@
 css-generator.netlify.app
-https://css-tricks.com
+css-tricks.com
+fontawesome.com/icons

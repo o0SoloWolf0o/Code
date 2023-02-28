@@ -1,0 +1,264 @@
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 12vw;
+}
+
+h2 {
+    text-align: center;
+    font-size: 4vw;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.head1 {
+    color: rgba(255, 255, 255, 1);
+}
+
+.head2 {
+    color: rgba(255, 255, 255, 1);
+    margin-top: -5vw;
+}
+
+.head3 {
+    color: rgba(255, 255, 255, 1);
+    margin-top: -10vw;
+    font-size: 3vw;
+}
+
+.box1 {
+    opacity: 1;
+    position: relative;
+    display: inline-block;
+    padding: 0vw 1vw;
+    box-sizing: border-box;
+    width: 26%;
+    margin-bottom: 1vw;
+    margin-left: 3vw;
+}
+
+.box1 .box1-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 40%;
+    opacity: 1;
+}
+
+.box1 .box2-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 30%;
+    opacity: 1;
+}
+
+.box1 .box3-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 15%;
+    opacity: 1;
+}
+
+
+
+
+.box1:hover {
+    opacity: 0.5;
+    transform: scale(1.25);
+}
+
+.box1:hover .box1-text {
+    opacity: 1;
+    text-align: center;
+    visibility: visible;
+    color: rgba(0, 0, 0, 1);
+}
+
+.box1:hover .box2-text {
+    opacity: 1;
+    text-align: center;
+    visibility: visible;
+    color: rgba(0, 0, 0, 1);
+}
+
+.box1:hover .box3-text {
+    opacity: 1;
+    text-align: center;
+    visibility: visible;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+.im-box1 {
+    width: 120%;
+
+}
+
+.im-box2 {
+    width: 120%;
+    position: relative;
+    left: 2.5vw;
+}
+
+.im-box3 {
+    width: 120%;
+    position: relative;
+    left: 5vw;
+
+}
+
+.container {
+    margin-top: -3.4vw;
+    margin-left: -1vw;
+    margin-right: -1vw;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.9)), url(bg.webp);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0vw -1vw;
+}
+
+.box2 {
+    box-sizing: border-box;
+    width: 25%;
+    margin-top: -1vw;
+}
+
+.content1 {
+    color: rgba(255, 255, 255, 1);
+    background-color: #31bffb;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: -2.8vw;
+}
+
+.content1:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.content2 {
+    color: rgba(255, 255, 255, 1);
+    background-color: #ec1ef9;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: -2.8vw;
+}
+
+.content2:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.sub-content {
+    margin-top: -2vw;
+    font-size: 0.8vw;
+}
+
+.topic-item {
+    margin-top: -15px;
+    margin-bottom: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 10px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+body {
+    background-color: black;
+}
+
+.container-3 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.column {
+    flex: 26%;
+    padding: 5px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+.slideTop {
+    position: relative;
+    top: 0px;
+    animation-name: slideInFromTop;
+    animation-duration: 1s;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        top: -1000px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.slideLeft {
+    position: relative;
+    left: 0px;
+    animation-name: slideInFromLeft;
+    animation-duration: 1s;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        left: -1500px;
+    }
+
+    100% {
+        left: 0;
+    }
+}

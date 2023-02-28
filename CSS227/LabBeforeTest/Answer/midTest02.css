@@ -1,0 +1,133 @@
+body{
+	font-family: Raleway;
+	background: #EECDA3;  
+	background: linear-gradient(to right, #1682db, #e63124); 
+	font-size: 1rem;
+}
+
+#main{
+    color:black;
+	background: rgba(236, 240, 241,0.3);
+	width: 80%;
+	margin: 50px auto;
+	border-radius: 20px;
+	padding: 50px 30px 50px 30px;
+}
+
+input{
+	border-radius: 3px;
+}
+
+/* .gridbox{
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 1fr;
+} */
+
+.icon{
+	height: 50px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 0 5px;
+}
+
+.top-flexbox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	box-sizing: border-box;
+	margin: 0px -10px;
+}
+
+.top-item {
+	box-sizing: border-box;
+	width: 50%;
+	margin-bottom: 20px;
+	padding: 0px 10px;
+}
+
+.bottom-flexbox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	box-sizing: border-box;
+	margin: 0px -10px;
+}
+
+.bottom-item {
+	box-sizing: border-box;
+	width: 25%;
+	margin-bottom: 20px;
+	padding: 0px 10px;
+}
+
+.bottom-item:hover{
+	transform: scale(1.05); } 
+  
+.bottom-content {
+	color:black;
+	background: rgba(236, 240, 241,0.2);
+	border-radius: 5px;
+	padding: 10px 10px 10px 10px;
+	margin: 10px 10px 0px 0px;
+	box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.2), 0 1px 1px 0 rgba(255, 255, 255, 0.19);
+}
+
+.composition {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 200px;
+}
+
+.composition_photo{
+	max-width: 70%;
+    max-height: 200px;
+    /* box-shadow: 0 1.5rem 0.5rem rgb(0 0 0 / 40%); */
+    box-shadow: 0 0.25rem 0.25rem rgb(0 0 0 / 40%);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem;
+}
+
+.composition_photo1{
+	left: 0;
+    top: -2rem;
+}
+
+.composition_photo2{
+	left: 40%;
+    top: 0rem;
+}
+
+.composition_photo3{
+	left: 20%;
+    top: 2rem;
+}
+
+.composition_photo:hover {
+	border: 0.5rem solid #f22e1870;
+	transform: scale(1.05) translateY(-0.5rem);
+	box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+	z-index: 20; }
+
+.composition:hover .composition_photo:not(:hover) {
+  transform: scale(0.95); 
+}
+
+[class *= "col-"] {
+	width: 100%;
+}
+  
+@media only screen and (min-width: 768px) {
+	.col-3 {width: 25%;}
+	.col-6 {width: 50%;}
+	.col-12 {width: 100%;}
+}
