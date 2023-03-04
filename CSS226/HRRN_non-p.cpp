@@ -8,7 +8,7 @@ struct process {
     int pid;
     int arrival;
     int burst;
-    int waiting;  // added waiting time member variable
+    int waiting;
 };
 
 bool compareArrivalTime(process p1, process p2) {
