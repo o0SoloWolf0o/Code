@@ -1,60 +1,135 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
+// C++ program for Highest Response Ratio Next (HRRN)
+// Scheduling
+#include <bits/stdc++.h>
 using namespace std;
-
+// Defining process details
 struct process {
-    int pid;
-    int arrival;
-    int burst;
-    int waiting;
-};
+	char name;
+	int at, bt, ct, wt, tt;
+	int completed;
+	float ntt;
+} p[10];
 
-bool compareArrivalTime(process p1, process p2) {
-    return p1.arrival < p2.arrival;
+int n;
+
+// Sorting Processes by Arrival Time
+void sortByArrival()
+{
+	struct process temp;
+	int i, j;
+
+	// Selection Sort applied
+	for (i = 0; i < n - 1; i++) {
+		for (j = i + 1; j < n; j++) {
+
+			// Check for lesser arrival time
+			if (p[i].at > p[j].at) {
+
+				// Swap earlier process to front
+				temp = p[i];
+				p[i] = p[j];
+				p[j] = temp;
+			}
+		}
+	}
 }
 
-bool compareResponseRatio(process p1, process p2) {
-    return ((p1.burst + (p1.waiting - p1.arrival)) / p1.burst) > ((p2.burst + (p2.waiting - p2.arrival)) / p2.burst);
-}
+int main()
+{
+	int i, j, sum_bt = 0;
+	char c;
+	float t, avgwt = 0, avgtt = 0;
+	n = 5;
 
-int main() {
-    vector<process> processes;
-    processes.push_back({0, 0, 10});
-    processes.push_back({1, 2, 5});
-    processes.push_back({2, 4, 3});
-    processes.push_back({3, 5, 4});
+	// predefined arrival times
+	int arriv[] = { 0, 2, 4, 6, 8 };
+    // another example
 
-    sort(processes.begin(), processes.end(), compareArrivalTime);
+	// predefined burst times
+	int burst[] = { 3, 6, 4, 5, 2 };
+    // another example
+    // int arriv[] = { 0, 1, 2, 3, 4 };
+    // int burst[] ={ 5, 4, 3, 2, 1 };
 
-    int n = processes.size();
-    int current_time = 0;
-    vector<int> completion_time(n), waiting_time(n);
+	// Initializing the structure variables
+	for (i = 0, c = 'A'; i < n; i++, c++) {
+		p[i].name = c;
+		p[i].at = arriv[i];
+		p[i].bt = burst[i];
 
-    for (int i = 0; i < n; i++) {
-        waiting_time[i] = current_time - processes[i].arrival;
-        current_time += processes[i].burst;
-        completion_time[i] = current_time;
-    }
+		// Variable for Completion status
+		// Pending = 0
+		// Completed = 1
+		p[i].completed = 0;
 
-    for (int i = 0; i < n; i++) {
-        processes[i].waiting = waiting_time[i];
-    }
+		// Variable for sum of all Burst Times
+		sum_bt += p[i].bt;
+	}
 
-    sort(processes.begin(), processes.end(), compareResponseRatio);
+	// Sorting the structure by arrival times
+	sortByArrival();
+	cout << "PN\tAT\tBT\tWT\tTAT\tNTT";
+	for (t = p[0].at; t < sum_bt;) {
 
-    current_time = 0;
+		// Set lower limit to response ratio
+		float hrr = -9999;
 
-    for (int i = 0; i < n; i++) {
-        waiting_time[i] = current_time - processes[i].arrival;
-        current_time += processes[i].burst;
-        completion_time[i] = current_time;
-    }
+		// Response Ratio Variable
+		float temp;
 
-    for (int i = 0; i < n; i++) {
-        cout << "Process " << processes[i].pid << " Completion Time: " << completion_time[i] << " Waiting Time: " << waiting_time[i] << endl;
-    }
+		// Variable to store next process selected
+		int loc;
+		for (i = 0; i < n; i++) {
 
-    return 0;
+			// Checking if process has arrived and is
+			// Incomplete
+			if (p[i].at <= t && p[i].completed != 1) {
+
+				// Calculating Response Ratio
+				temp = (p[i].bt + (t - p[i].at)) / p[i].bt;
+
+				// Checking for Highest Response Ratio
+				if (hrr < temp) {
+
+					// Storing Response Ratio
+					hrr = temp;
+
+					// Storing Location
+					loc = i;
+				}
+			}
+		}
+
+		// Updating time value
+		t += p[loc].bt;
+
+		// Calculation of waiting time
+		p[loc].wt = t - p[loc].at - p[loc].bt;
+
+		// Calculation of Turn Around Time
+		p[loc].tt = t - p[loc].at;
+
+		// Sum Turn Around Time for average
+		avgtt += p[loc].tt;
+
+		// Calculation of Normalized Turn Around Time
+		p[loc].ntt = ((float)p[loc].tt / p[loc].bt);
+
+		// Updating Completion Status
+		p[loc].completed = 1;
+
+		// Sum Waiting Time for average
+		avgwt += p[loc].wt;
+		cout << "\n" << p[loc].name << "\t" << p[loc].at;
+		cout << "\t" << p[loc].bt << "\t" << p[loc].wt;
+		cout << "\t" << p[loc].tt << "\t" << p[loc].ntt;
+	}
+	cout << "\nAverage waiting time: " << avgwt / n << endl;
+	cout << "Average Turn Around time:" << avgtt / n;
+    cout << "\nPN = Process Name, " << endl;
+    cout << "AT = Arrival Time, " << endl;
+    cout << "BT = Burst Time, " << endl;
+    cout << "WT = Waiting Time, " << endl;
+    cout << "TAT = Turn Around Time, " << endl;
+    cout << "NTT = Normalized Turn Around Time" << endl;
 }
