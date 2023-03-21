@@ -8,10 +8,6 @@ print()
 
 # print python path
 print(sys.path)
-
-print(np.__version__)
 print()
 
-# Test WebHook GitHub Version 5
-
-# test
+print(np.__version__)
