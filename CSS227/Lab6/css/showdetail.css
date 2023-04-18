@@ -7,8 +7,10 @@
     margin-top: 10px;
     margin-left: 5px;
 }
-#showDetail table{
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-}
+button {
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+  }

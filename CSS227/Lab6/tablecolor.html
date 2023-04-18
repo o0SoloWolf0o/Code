@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tablecolor.css">
+</head>
+<body>
+    <div class="block">
+        <table>
+            <tr>
+                <td id="one-one"></td>
+                <td id="one-two"></td>
+            </tr>
+            <tr>
+                <td id="two-one"></td>
+                <td id="two-two"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+let oneOne = document.getElementById("one-one");
+let oneTwo = document.getElementById("one-two");
+let twoOne = document.getElementById("two-one");
+let twoTwo = document.getElementById("two-two");
+let table = document.getElementsByTagName("table")[0];
+// if click table and change color and change in back on another click
+table.addEventListener("click", function(){
+    if(oneOne.style.backgroundColor == "white"){
+        oneOne.style.backgroundColor = "black";
+        oneTwo.style.backgroundColor = "white";
+        twoOne.style.backgroundColor = "white";
+        twoTwo.style.backgroundColor = "black";
+    }else{
+        oneOne.style.backgroundColor = "white";
+        oneTwo.style.backgroundColor = "black";
+        twoOne.style.backgroundColor = "black";
+        twoTwo.style.backgroundColor = "white";
+    }
+});
+</script>
+</html>

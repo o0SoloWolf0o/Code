@@ -1,0 +1,32 @@
+.block{
+    background-color: #000000;
+    border: 1px solid #000000;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+}
+table{
+    background-color: #ffffff;
+    border: 5px solid #ffffff;
+    margin-top: 14px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 170px;
+    width: 170px;
+}
+#one-one{
+    background-color: #ffffff;
+}
+#one-two{
+    background-color: #000000;
+}
+#two-one{
+    background-color: #000000;
+}
+#two-two{
+    background-color: #ffffff;
+}
