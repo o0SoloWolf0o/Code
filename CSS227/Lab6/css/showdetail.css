@@ -1,0 +1,14 @@
+.bar{
+    border: 1px solid black;
+    height: 40px;
+
+}
+#showDetail{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+#showDetail table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
