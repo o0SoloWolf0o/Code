@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .image-preview {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>ข้อความแบบสุ่ม</h1>
+  <p>เปลี่ยนทุกครั้งที่ Reload</p>
+  <blockquote id="quote"></blockquote>
+  <p id="author"></p>
+
+
+  <h1>Image Gallery</h1>
+
+  <div>
+    <img id="main-image" src="img/image-0.jpg">
+  </div>
+
+  <div>
+    <div class="image-preview">
+      <img src="img/image-1.jpg" onclick="changeMainImage('img/image-1.jpg')">
+    </div>
+    <div class="image-preview">
+      <img src="img/image-2.jpg" onclick="changeMainImage('img/image-2.jpg')">
+    </div>
+    <div class="image-preview">
+      <img src="img/image-3.jpg" onclick="changeMainImage('img/image-3.jpg')">
+    </div>
+  </div>
+  <p id="last-update">อัพเดทล่าสุด:</p>
+
+  <script>
+    function generateQuote() {
+      const quotes = [
+        "All we have to decide is what to do with the time that is given us.",
+        "Not all those who wander are lost.",
+        "It is not despair, for despair is only for those who see the end beyond all doubt. We do not.",
+        "The biggest adventure you can ever take is to live the life of your dreams.",
+        "The only way to do great work is to love what you do.",
+        "In three words I can sum up everything I've learned about life: it goes on.",
+        "Believe you can and you're halfway there.",
+        "I have not failed. I've just found 10,000 ways that won't work."
+      ];
+      const authors = [
+        "J.R.R. Tolkien",
+        "J.R.R. Tolkien",
+        "J.K. Rowling",
+        "Oprah Winfrey",
+        "Steve Jobs",
+        "Robert Frost",
+        "Theodore Roosevelt",
+        "Thomas Edison"
+      ];
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quoteElement = document.getElementById("quote");
+      const authorElement = document.getElementById("author");
+      quoteElement.innerHTML = quotes[randomIndex];
+      authorElement.innerHTML = "- " + authors[randomIndex];
+    }
+
+    window.onload = generateQuote;
+
+    function changeMainImage(imageSrc) {
+      var mainImage = document.getElementById('main-image');
+      mainImage.src = imageSrc;
+    }
+    var lastUpdateElem = document.getElementById('last-update');
+    lastUpdateElem.innerHTML += ' ' + document.lastModified
+  </script>
+</body>
+
+</html>

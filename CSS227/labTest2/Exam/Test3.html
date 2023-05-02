@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Business Cards</h1>
+
+  <div id="businessCards"></div>
+
+  <script>
+    const avengers = [
+      {
+        name: "Iron man",
+        email: "tony.stark@avengers.com",
+        address: "New york, USA",
+        phone: "xxx-xxx-xxxx"
+      },
+      {
+        name: "Captain America",
+        email: "steve.roger@avengers.com",
+        address: "Oregon, USA",
+        phone: "yyy-yyy-yyyy"
+      },
+      {
+        name: "Thor",
+        email: "thegodofthunder@avengers.com",
+        address: "Main, Asgard",
+        phone: "zzz-zzz-zzzz"
+      }
+    ];
+
+    const businessCardsContainer = document.getElementById("businessCards");
+
+    for (let i = 0; i < avengers.length; i++) {
+      const avenger = avengers[i];
+
+      const card = document.createElement("div");
+
+      const name = document.createElement("h2");
+      name.textContent = avenger.name;
+
+      const email = document.createElement("p");
+      email.textContent = `Email: ${avenger.email}`;
+
+      const address = document.createElement("p");
+      address.textContent = `Address: ${avenger.address}`;
+
+      const phone = document.createElement("p");
+      phone.textContent = `Phone: ${avenger.phone}`;
+
+      card.appendChild(name);
+      card.appendChild(email);
+      card.appendChild(address);
+      card.appendChild(phone);
+
+      businessCardsContainer.appendChild(card);
+    }
+  </script>
+</body>
+</html>

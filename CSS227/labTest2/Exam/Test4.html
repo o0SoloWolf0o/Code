@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test 4</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Sorting Name</h1>
+    <p>ใส่ชื่อ โดยชื่อจะไปเรียงในกล่องข้อความด้านล่าง</p>
+    <form name="theform">
+      Name:
+      <input name="newname" size="20" type="text">
+      <input type="button" onclick="sortNames()" value="Add New">
+      <br>
+      <h2>ชื่อที่เรียงแล้ว</h2>
+      <textarea cols="60" rows="10" name="sorted">
+        ชื่อที่เรียงแล้วจะแสดงตรงนี้
+      </textarea>
+    </form>
+    <script>
+      function sortNames() {
+        const namesTextarea = document.getElementsByName("sorted")[0];
+        const names = namesTextarea.value.split("\n");
+        const newName = document.getElementsByName("newname")[0].value;
+        names.push(newName);
+        const sortedNames = names.sort();
+        namesTextarea.value = sortedNames.join("\n");
+      }
+    </script>
+  </body>
+</html>

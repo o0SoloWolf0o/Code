@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test 2</title>
+  <style>
+    #buttons {
+      text-align: center;
+    }
+
+    #square {
+      position: absolute;
+      top: 150px;
+      left: 50px;
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      padding: 10px;
+      background-color: #e0e0e0;
+    }
+
+    div {
+      padding: 10px;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Positioning Elements</h1>
+  <div id="buttons">
+    <button type="button" name="left">ซ้าย</button>
+    <button type="button" name="right">ขวา</button>
+    <button type="button" name="up">ขึ้น</button>
+    <button type="button" name="down">ลง</button>
+    <button type="button" name="hide">ซ่อน</button>
+    <button type="button" name="show">แสดง</button>
+  </div>
+  <hr>
+  <div id="square">
+    กล่องนี้จะขยับจะคำสั่ง
+  </div>
+  <script>
+
+    const square = document.getElementById('square');
+    const leftButton = document.querySelector('button[name="left"]');
+    const rightButton = document.querySelector('button[name="right"]');
+    const upButton = document.querySelector('button[name="up"]');
+    const downButton = document.querySelector('button[name="down"]');
+    const hideButton = document.querySelector('button[name="hide"]');
+    const showButton = document.querySelector('button[name="show"]');
+
+    // Move the square up
+    upButton.addEventListener('click', () => {
+      const top = parseInt(square.style.top) || 150; // เริ่มต้นที่ 150px
+      square.style.top = Math.max(50, top - 10) + 'px'; // ไม่ให้เลื่อนเกิน 50px
+    });
+
+    // Move the square down
+    downButton.addEventListener('click', () => {
+      const top = parseInt(square.style.top) || 150; // เริ่มต้นที่ 150px
+      square.style.top = Math.min(350, top + 10) + 'px'; // ไม่ให้เลื่อนเกิน 350px
+    });
+
+    // Move the square left
+    leftButton.addEventListener('click', () => {
+      const left = parseInt(square.style.left) || 50; // เริ่มต้นที่ 50px
+      square.style.left = Math.max(50, left - 10) + 'px'; // ไม่ให้เลื่อนเกิน 50px
+    });
+
+    // Move the square right
+    rightButton.addEventListener('click', () => {
+      const left = parseInt(square.style.left) || 50; // เริ่มต้นที่ 50px
+      square.style.left = Math.min(250, left + 10) + 'px'; // ไม่ให้เลื่อนเกิน 250px
+    });
+
+
+    // Hide the square
+    hideButton.addEventListener('click', () => {
+      square.style.display = 'none';
+    });
+
+    // Show the square
+    showButton.addEventListener('click', () => {
+      square.style.display = 'block';
+    });
+
+  </script>
+</body>
+
+</html>
