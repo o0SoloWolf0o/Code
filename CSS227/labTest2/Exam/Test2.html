@@ -51,37 +51,30 @@
     const hideButton = document.querySelector('button[name="hide"]');
     const showButton = document.querySelector('button[name="show"]');
 
-    // Move the square up
     upButton.addEventListener('click', () => {
       const top = parseInt(square.style.top) || 150; // เริ่มต้นที่ 150px
       square.style.top = Math.max(50, top - 10) + 'px'; // ไม่ให้เลื่อนเกิน 50px
     });
 
-    // Move the square down
     downButton.addEventListener('click', () => {
       const top = parseInt(square.style.top) || 150; // เริ่มต้นที่ 150px
       square.style.top = Math.min(350, top + 10) + 'px'; // ไม่ให้เลื่อนเกิน 350px
     });
 
-    // Move the square left
     leftButton.addEventListener('click', () => {
       const left = parseInt(square.style.left) || 50; // เริ่มต้นที่ 50px
       square.style.left = Math.max(50, left - 10) + 'px'; // ไม่ให้เลื่อนเกิน 50px
     });
 
-    // Move the square right
     rightButton.addEventListener('click', () => {
       const left = parseInt(square.style.left) || 50; // เริ่มต้นที่ 50px
       square.style.left = Math.min(250, left + 10) + 'px'; // ไม่ให้เลื่อนเกิน 250px
     });
 
-
-    // Hide the square
     hideButton.addEventListener('click', () => {
       square.style.display = 'none';
     });
 
-    // Show the square
     showButton.addEventListener('click', () => {
       square.style.display = 'block';
     });
