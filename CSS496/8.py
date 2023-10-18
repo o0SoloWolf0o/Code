@@ -1,13 +1,13 @@
-from utils import sliding_window
+# from utils import sliding_window
 import argparse
 import time
 import numpy as np 
 import cv2
 
-# def sliding_window(image, stepSize, windowSize):
-    # for y in range(0, image.shape[0], stepSize):
-        # for x in range(0, image.shape[1], stepSize):
-            # yield (x, y, image[y:y + windowSize[1], x:x + windowSize[0]])
+def sliding_window(image, stepSize, windowSize):
+    for y in range(0, image.shape[0], stepSize):
+        for x in range(0, image.shape[1], stepSize):
+            yield (x, y, image[y:y + windowSize[1], x:x + windowSize[0]])
 
 def correlation_coefficient(patch1, patch2):
     product = np.mean((patch1 - patch1.mean()) * (patch2 - patch2.mean()))
@@ -44,7 +44,7 @@ for (x,y,window) in sliding_window(img1, stepSize = 16, windowSize = (winW,winH)
         found = maxV
         outx = x
         outy = y
-        print("found")
+        print(found)
     
     clone = img1.copy()
     
