@@ -1,4 +1,7 @@
+import argparse
+import time
 import numpy as np
+import cv2
 
 
 def sliding_window(image, stepSize, windowSize):
@@ -41,12 +44,6 @@ def non_max_suppression(boxes, overlapThresh):
     return boxes[pick].astype["int"]
 
 
-import argparse
-import time
-import numpy as np
-import cv2
-
-
 def correlation_coefficient(patch1, patch2):
     product = np.mean((patch1 - patch1.mean()) * (patch2 - patch2.mean()))
     stds = patch1.std() * patch2.std()
@@ -76,7 +73,7 @@ color = [[0, 255, 0], [0, 0, 255], [255, 0, 0]]
 i = 0
 
 for (x, y, window) in sliding_window(img1, stepSize=16, windowSize=(winW, winH)):
-    if window.shape[0] != winH or window.shape[i] != winW:
+    if window.shape[0] != winH or window.shape[1] != winW:
         continue
 
     patch = window.copy()
@@ -101,7 +98,7 @@ cv2.destroyAllWindows()
 
 clone = image1.copy()
 
-for (startx, starty, endx, endy) in boundingboxes:
+for startx, starty, endx, endy in boundingboxes:
     cv2.rectangle(clone, (startx, starty), (endx, endy), color[i], 2)
     i = i + 1
 
@@ -110,7 +107,7 @@ print(boundingboxes)
 pick = non_max_suppression(boundingboxes, 0.5)
 print(pick)
 
-for (startX, startY, endX, endY) in pick:
+for startX, startY, endX, endY in pick:
     cv2.rectangle(image1, (startX, startY), (endX, endY), (0, 255, 0), 2)
 
 cv2.imshow("BeforeSuppress", clone)
